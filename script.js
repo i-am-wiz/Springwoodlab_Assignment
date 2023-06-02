@@ -1,5 +1,5 @@
 'use strict'
-console.log('success');
+
 function executeScript() {
   // Get user details 
   let username = document.getElementById("username").value;
@@ -92,6 +92,7 @@ function ruleEngine(userDetails, triggerCondition, action) {
   }
 }
 
+//Action: Copy value from source variable to destination variable as specified by user
 function copyValue(userDetails) {
   //ask for variables names for required copy operation
   let source = prompt("Enter source variable name (in camelcase format)");
@@ -100,22 +101,26 @@ function copyValue(userDetails) {
   //perform the copy operation
   userDetails[destination] = userDetails[source];
 
+  //print the resulting details
   printUserDetails(userDetails);
 }
 
 // Action: Change the current value using arithmetic functions
 function performArithmetic(userDetails) {
   let operation = +prompt("Select arithmetic function code from below options (For eg. if you want to perform square operation, then select 2)\n1. Double\n2. Square\n3. Increment");
+
   if (!isFinite(operation) || operation < 1 || operation > 3) {
     alert("You entered an invalid number");
     return;
   }
+
   for (let key in userDetails) {
     if (key == 'username') continue;
     userDetails[key] = applyFunction(operation, userDetails[key]);
   }
-  printUserDetails(userDetails);
 
+  //print the resulting details
+  printUserDetails(userDetails);
 }
 
 
@@ -125,6 +130,7 @@ function drawGraph(userDetails) {
   // Perform the necessary graph drawing operation
 }
 
+//printUserDetails is used to render the resulting details in output screen on new page
 function printUserDetails(userDetails) {
   //create an anchor element and pass user details using query parameters
   let anchor = document.createElement("a");
