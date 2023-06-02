@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Enter the following details</h1>
+    <!-- Form for user details -->
+    <form id="userForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="userAge">User Age:</label>
+        <input type="number" id="userAge" name="userAge" required />
+      </div>
+      <div class="form-group">
+        <label for="userWeight">User Weight (in kg):</label>
+        <input type="number" id="userWeight" name="userWeight" required />
+      </div>
+      <div class="form-group">
+        <label for="dailyRunningKms">Daily Running Distance (in kms):</label>
+        <input
+          type="number"
+          id="dailyRunningKms"
+          name="dailyRunningKms"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="dailyWaterIntake">Daily Water Intake (in liters):</label>
+        <input
+          type="number"
+          id="dailyWaterIntake"
+          name="dailyWaterIntake"
+          required
+        />
+      </div>
+
+      <!-- Input for trigger condition -->
+      <h1>Select Trigger condition</h1>
+      <div class="form-group">
+        <label for="comparisonOperator"
+          >Select a Comparison Operator and enter values operand values (For eg.
+          if you want comparison of the form A > B then choose ">" from the
+          dropdown menu and enter input values for A and B. Please note that A
+          and B must be number)</label
+        >
+
+        <select id="comparisonOperator" name="comparisonOperator">
+          <option value="==">Equal to (=)</option>
+          <option value="=s">Equal to string (Comparison with a string)</option>
+          <option value="<">Less than (<)</option>
+          <option value=">">Greater than (>)</option>
+          <option value="<=">Less than or equal to (<=)</option>
+          <option value=">=">Greater than or equal to (>=)</option>
+        </select>
+        <br />
+        <br />
+        <div class="form-group">
+          <label for="A" style="display: inline">A:</label>
+          <input type="number" id="A" name="A" required />
+        </div>
+        <div class="form-group">
+          <label for="B" style="display: inline">B:</label>
+          <input type="text" id="B" name="B" required />
+        </div>
+      </div>
+
+      <!-- Input for action template -->
+      <h1>Select Action</h1>
+      <div class="form-group">
+        <label for="comparisonOperator"
+          >The selected action will be executed if the selected trigger
+          condition is satisfied.</label
+        >
+        <select id="template" name="template">
+          <option value="copy">Copy one value to another</option>
+          <option value="arithmetic">
+            Change the current value using arithmetic functions
+          </option>
+          <option value="graph">
+            Take mathematical expressions and draw the graph varying the
+            independent variable
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Submit" onclick="executeScript()" />
+      </div>
+    </form>
+
+    <script></script>
+  </body>
+</html>

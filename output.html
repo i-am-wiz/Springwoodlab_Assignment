@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Output Screen</title>
+    <style>
+      body {
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Output Screen</h1>
+    <hr />
+
+    <script>
+      // Accessing the query parameters
+      let queryString = window.location.search;
+      let urlParams = new URLSearchParams(queryString);
+      let username = urlParams.get("username");
+      let userAge = urlParams.get("userAge");
+      let userWeight = urlParams.get("userWeight");
+      let dailyRunningKms = urlParams.get("dailyRunningKms");
+      let dailyWaterIntake = urlParams.get("dailyWaterIntake");
+
+      // Displaying the data on the destination page
+      document.write("<p>Username: " + username + "</p>");
+      document.write("<p>User Age: " + userAge + "</p>");
+      document.write("<p>User Weight: " + userWeight + "</p>");
+      document.write(
+        "<p>Daily Running Kilometres: " + dailyRunningKms + "</p>"
+      );
+      document.write(
+        "<p>Daily Water Intake (in Litres): " + dailyWaterIntake + "</p>"
+      );
+    </script>
+  </body>
+</html>
