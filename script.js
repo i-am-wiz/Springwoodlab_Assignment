@@ -82,7 +82,7 @@ function ruleEngine(userDetails, triggerCondition, action) {
         performArithmetic(userDetails);
         break;
       case 'graph':
-        drawGraph(userDetails);
+        drawGraph();
         break;
       default:
         console.log('Invalid action template');
@@ -123,11 +123,22 @@ function performArithmetic(userDetails) {
   printUserDetails(userDetails);
 }
 
+// Action: Plot a graph of the entered input equation
+function drawGraph() {
+  //Prompt user to enter input equation
+  //This function assumes the user enters the input in a given specific format and not in a free format
+  let equation = prompt("Enter an equation of the form y=mx+c (Without spaces Eg. y=2x+4)");
+  let xstart = prompt("Enter a starting value of the independent variable for the plot (Must be a number)", 0);
+  let xend = prompt("Enter a ending value of the independent variable for the plot (Must be a number)", 10);
 
+  let anchor = document.createElement("a");
+  anchor.href = "graph.html?";
+  anchor.href += "equation=" + equation;
+  anchor.href += "&";
+  anchor.href += "xstart=" + xstart + "&" + "xend=" + xend;
 
-function drawGraph(userDetails) {
+  anchor.click();
 
-  // Perform the necessary graph drawing operation
 }
 
 //printUserDetails is used to render the resulting details in output screen on new page
